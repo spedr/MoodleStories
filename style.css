@@ -1,0 +1,793 @@
+$field-container-padding: 5px;
+$label-padding: $field-container-padding !default;
+/* Reset */
+@import url(//codepen.io/chrisdothtml/pen/ojLzJK.css);
+
+
+//aqui
+.field-container{
+  position: absolute;
+  bottom: 60px;
+  vertical-align: middle;
+  border:1px solid #bcbaba;
+  height:50px;
+  width:250px;
+  padding-left:12px;
+  margin-top: 1cm;
+}
+
+select{
+  margin-top: 1.5cm;
+}
+
+.submit_container{
+  position: absolute;
+  bottom: 0;
+  float: right;
+}
+
+.field-placeholder{
+  position: absolute;
+
+  top: 50%;
+  transform: translate(#{$label-padding}, -50%);
+  pointer-events: none;
+  transition: all .14s ease-in-out;
+  font-size:18px;
+  color:#adadad;
+}
+
+input[type="text"].field-input{
+  color: #000;
+ border:none;
+  padding: $label-padding;
+  margin-top:20px;
+  font-size: 16px;
+  background-color: transparent;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  bottom:0px;
+  &:focus {
+    outline: none;
+  }
+  &.c-fix,
+  &:focus,
+  &:not(:placeholder-shown),
+  {
+    border-color: transparent;
+    ~ label {
+     color:#646669;
+      font-size: 11px;
+      //Come up with a calculation for this
+      top: calc(30% - .5rem);
+      transform: translate(#{$label-padding}, 0%);
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    color: transparent;
+  }
+  &::-moz-placeholder {
+    color: transparent;
+  }
+  &:-ms-input-placeholder {
+    color: transparent;
+  }
+
+}
+
+.file-upload {
+  width: 175;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+  vertical-align: top;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.svgcontainer {
+  float: right;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 550px;
+  height: 300px;
+  margin-top: 8px;
+}
+
+svg {
+  float: center;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 600px;
+  height: 475px;
+  margin-top: 8px;
+}
+
+.formstyle{
+  position: relative;
+  float: right;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 325px;
+  height: 475px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+circle {
+  opacity: 0.5;
+}
+
+.slcted{
+  opacity: 1;
+}
+
+.success{
+  fill: #228B22;
+  opacity: 0.5;
+}
+
+.success_selected{
+  fill: #228B22;
+  opacity: 1;
+}
+
+.average{
+  fill: #F0E68C;
+  opacity: 0.5;
+}
+
+.average_selected{
+  fill: #F0E68C;
+  opacity: 1;
+}
+
+.failure{
+  fill: #CD5C5C;
+  opacity: 0.5;
+}
+
+.failure_selected{
+  fill: #CD5C5C;
+  opacity: 1;
+}
+
+.draggable {
+  cursor: move;
+}
+
+// colors
+$color-one: #2c3e50;
+$btn-colors: (
+	"green": "#2ecc71",
+	"blue": "#3498db",
+	"purple": "#9b59b6",
+	"navy": "#34495e",
+	"orange": "#e67e22",
+	"red": "#e74c3c"
+);
+
+// extenders
+.animate {
+	transition: all 0.3s;
+}
+
+/* Main Styles */
+.main-container {
+	width: 100%;
+	max-width: 750px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+h1 {
+	line-height: 1;
+	padding: 25px 0;
+	border-bottom: 1px solid $color-one;
+	font-size: 35px;
+	color: $color-one;
+	text-align: center;
+}
+
+section {
+	padding: 60px 0 61px;
+	text-align: center;
+	position: relative;
+
+	h2 {
+		margin-bottom: 15px;
+		font-weight: normal;
+		font-size: 17px;
+		color: #D2D2D2;
+		text-align: center;
+	}
+
+	&:not(:last-child):after {
+		content: '';
+		width: 70%;
+		height: 1px;
+		border-bottom: 1px dashed $color-one;
+		opacity: .5;
+		position: absolute;
+		bottom: -1px;
+		left: 15%;
+	}
+}
+
+.btn {
+	display: inline-block;
+	line-height: 35px;
+	margin: 8px;
+	padding: 0 15px;
+	font-size: 15px;
+	position: relative;
+	opacity: .999;
+	border-radius: 3px;
+	@extend .animate;
+}
+
+.btn-border-o {
+	background-color: transparent;
+	border: 1px solid #d0d0d0;
+	color: #B8B8B8;
+
+	&:before,
+	&:after {
+		content: '';
+		border-style: solid;
+		position: absolute;
+		z-index: 5;
+		border-radius: 3px;
+		box-sizing: content-box;
+		@extend .animate;
+	}
+
+	&:before {
+		width: 0;
+		height: 100%;
+		border-width: 1px 0 1px 0;
+		top: -1px;
+		left: 0;
+		transition-delay: 0.05s;
+	}
+
+	&:after {
+		width: 100%;
+		height: 0;
+		border-width: 0 1px 0 1px;
+		top: 0;
+		left: -1px;
+	}
+
+	&:hover {
+
+		&:before {
+			width: 100%;
+		}
+
+		&:after {
+			height: 100%;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				border-color: #{$hex};
+			}
+
+			&:hover {
+				color: #{$hex};
+			}
+		}
+	}
+}
+
+.btn-border {
+	background-color: #e5e5e5;
+	border: 1px solid #e5e5e5;
+	color: #a6a6a6;
+
+	&:before,
+	&:after {
+		content: '';
+		border-style: solid;
+		position: absolute;
+		z-index: 5;
+		border-radius: 3px;
+		box-sizing: content-box;
+		@extend .animate;
+	}
+
+	&:before {
+		width: 0;
+		height: 100%;
+		border-width: 1px 0 1px 0;
+		top: -1px;
+		left: 0;
+		transition-delay: 0.05s;
+	}
+
+	&:after {
+		width: 100%;
+		height: 0;
+		border-width: 0 1px 0 1px;
+		top: 0;
+		left: -1px;
+	}
+
+	&:hover {
+		background-color: transparent;
+
+		&:before {
+			width: 100%;
+		}
+
+		&:after {
+			height: 100%;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				border-color: #{$hex};
+			}
+
+			&:hover {
+				color: #{$hex};
+			}
+		}
+	}
+}
+
+.btn-border-rev-o {
+	background-color: transparent;
+	border: 1px solid #d0d0d0;
+	color: #B8B8B8;
+
+	&:before,
+	&:after {
+		content: '';
+		border-style: solid;
+		position: absolute;
+		z-index: 5;
+		border-radius: 3px;
+		box-sizing: content-box;
+		@extend .animate;
+	}
+
+	&:before {
+		width: 0;
+		height: 100%;
+		border-width: 1px 0 1px 0;
+		top: -1px;
+		right: 0;
+		transition-delay: 0.05s;
+	}
+
+	&:after {
+		width: 100%;
+		height: 0;
+		border-width: 0 1px 0 1px;
+		bottom: 0;
+		left: -1px;
+	}
+
+	&:hover {
+
+		&:before {
+			width: 100%;
+		}
+
+		&:after {
+			height: 100%;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				border-color: #{$hex};
+			}
+
+			&:hover {
+				color: #{$hex};
+			}
+		}
+	}
+}
+
+.btn-border-rev {
+	background-color: #e5e5e5;
+	border: 1px solid #e5e5e5;
+	color: #a6a6a6;
+
+	&:before,
+	&:after {
+		content: '';
+		border-style: solid;
+		position: absolute;
+		z-index: 5;
+		border-radius: 3px;
+		box-sizing: content-box;
+		@extend .animate;
+	}
+
+	&:before {
+		width: 0;
+		height: 100%;
+		border-width: 1px 0 1px 0;
+		top: -1px;
+		right: 0;
+	}
+
+	&:after {
+		width: 100%;
+		height: 0;
+		border-width: 0 1px 0 1px;
+		bottom: 0;
+		left: -1px;
+		transition-delay: 0.05s;
+	}
+
+	&:hover {
+		background-color: transparent;
+
+		&:before {
+			width: 100%;
+		}
+
+		&:after {
+			height: 100%;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				border-color: #{$hex};
+			}
+
+			&:hover {
+				color: #{$hex};
+			}
+		}
+	}
+}
+
+.btn-fill-vert-o {
+	background-color: transparent;
+	border: 1px solid #d0d0d0;
+	color: #B8B8B8;
+	overflow: hidden;
+
+	&:before,
+	&:after {
+		content: '';
+		width: 100%;
+		height: 0;
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		z-index: -1;
+		@extend .animate;
+	}
+
+	&:before {
+		top: 50%;
+	}
+
+	&:after {
+		bottom: 50%;
+	}
+
+	&:hover {
+		color: #fff;
+
+		&:before,
+		&:after {
+			height: 50%;
+			opacity: 1;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				background-color: #{$hex};
+			}
+
+			&:hover {
+				border-color: #{$hex};
+			}
+		}
+	}
+}
+
+.btn-fill-vert {
+	background-color: #e5e5e5;
+	border: 1px solid #e5e5e5;
+	color: #a6a6a6;
+	overflow: hidden;
+
+	&:before,
+	&:after {
+		content: '';
+		width: 100%;
+		height: 0;
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		z-index: -1;
+		@extend .animate;
+	}
+
+	&:before {
+		top: 50%;
+	}
+
+	&:after {
+		bottom: 50%;
+	}
+
+	&:hover {
+		color: #fff;
+
+		&:before,
+		&:after {
+			height: 50%;
+			opacity: 1;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				background-color: #{$hex};
+			}
+
+			&:hover {
+				border-color: #{$hex};
+			}
+		}
+	}
+}
+
+.btn-fill-horz-o {
+	background-color: transparent;
+	border: 1px solid #d0d0d0;
+	color: #B8B8B8;
+	overflow: hidden;
+
+	&:before,
+	&:after {
+		content: '';
+		width: 0;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		@extend .animate;
+	}
+
+	&:before {
+		left: 50%;
+	}
+
+	&:after {
+		right: 50%;
+	}
+
+	&:hover {
+		color: #fff;
+
+		&:before,
+		&:after {
+			width: 50%;
+			opacity: 1;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				background-color: #{$hex};
+			}
+
+			&:hover {
+				border-color: #{$hex};
+			}
+		}
+	}
+}
+
+.btn-fill-horz {
+	background-color: #e5e5e5;
+	border: 1px solid #e5e5e5;
+	color: #a6a6a6;
+	overflow: hidden;
+
+	&:before,
+	&:after {
+		content: '';
+		width: 0;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		@extend .animate;
+	}
+
+	&:before {
+		left: 50%;
+	}
+
+	&:after {
+		right: 50%;
+	}
+
+	&:hover {
+		color: #fff;
+
+		&:before,
+		&:after {
+			width: 50%;
+			opacity: 1;
+		}
+	}
+
+	@each $name,$hex in $btn-colors {
+
+		&.btn-#{$name} {
+
+			&:before,
+			&:after {
+				background-color: #{$hex};
+			}
+
+			&:hover {
+				border-color: #{$hex};
+			}
+		}
+	}
+}
