@@ -334,6 +334,10 @@
     // Course wrapper start.
     echo("<script>console.defaultLog = console.log.bind(console);console.logs = [];console.log = function(){console.defaultLog.apply(console, arguments);console.logs.push(Array.from(arguments));}</script>");
     debug_to_console();
+	$modinfo = get_fast_modinfo($course);
+	echo '<pre>';
+	print_r($modinfo);
+	echo '</pre>';
     echo html_writer::start_tag('div', array('class'=>'course-content'));
 
     // make sure that section 0 exists (this function will create one if it is missing)
