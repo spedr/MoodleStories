@@ -57,39 +57,39 @@
     //echo "<script>console.log('Debug Objects: " . $uid . "' );</script>";
 
     //pega da unidade 1
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 6, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 1, $uid);
     echo "<script>console.log('nota12:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 2
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 7, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 2, $uid);
     echo "<script>console.log('nota3:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 3
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 8, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 3, $uid);
     echo "<script>console.log('nota4:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 4
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 9, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 4, $uid);
     echo "<script>console.log('nota5:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 5
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 10, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 5, $uid);
     echo "<script>console.log('nota6:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 6
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 11, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 6, $uid);
     echo "<script>console.log('nota7:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 7
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 12, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 7, $uid);
     echo "<script>console.log('nota8:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 8
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 13, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 8, $uid);
     echo "<script>console.log('nota9:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     //pega da unidade 9
-    $grading_info = grade_get_grades(2, 'mod', 'quiz', 14, $uid);
+    $grading_info = grade_get_grades(2, 'mod', 'quiz', 9, $uid);
     echo "<script>console.log('nota10:" . $grading_info->items[0]->grades[$uid]->grade . "' );</script>";
 
     }
@@ -334,10 +334,10 @@
     // Course wrapper start.
     echo("<script>console.defaultLog = console.log.bind(console);console.logs = [];console.log = function(){console.defaultLog.apply(console, arguments);console.logs.push(Array.from(arguments));}</script>");
     debug_to_console();
-	$modinfo = get_fast_modinfo($course);
-	echo '<pre>';
-	print_r($modinfo);
-	echo '</pre>';
+	//$modinfo = get_fast_modinfo($course);
+	//echo '<pre>';
+	//print_r($modinfo);
+	//echo '</pre>';
     echo html_writer::start_tag('div', array('class'=>'course-content'));
 
     // make sure that section 0 exists (this function will create one if it is missing)
